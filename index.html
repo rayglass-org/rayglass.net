@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Pre-launch: keep the site out of search indexes. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <title>RayGlass — DICOM viewer (evaluation)</title>
+    <meta
+      name="description"
+      content="RayGlass — fast DICOM viewer with GUI and CLI. Research/evaluation use only; not for clinical diagnosis."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>RayGlass</h1>
+      <p class="tagline">Fast DICOM viewer — native GUI and unrestricted CLI.</p>
+      <div class="cta">
+        <a class="btn primary" href="#download">Download</a>
+        <a class="btn" href="mailto:info@rayglass.net?subject=RayGlass%20license%20/%20purchase"
+          >Buy / License</a
+        >
+      </div>
+      <!-- MEDIA SLOT: hero screenshot (add docs/website/assets/hero.png). -->
+      <figure class="media hero-media">
+        <img src="./assets/hero.png" alt="RayGlass viewer screenshot" loading="lazy" />
+      </figure>
+    </header>
+
+    <div class="banner" role="alert">
+      <strong>NOT FDA approved — not for clinical use.</strong> RayGlass is for research,
+      education, and evaluation only. Do not use for medical diagnosis, patient care, or
+      life-critical decisions.
+    </div>
+
+    <main>
+      <section id="download" class="section">
+        <h2>Download</h2>
+        <p class="muted">
+          Builds are unsigned and portable — no administrator rights needed. Follow the unblock step
+          for your OS the first time.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>macOS (Apple Silicon)</h3>
+            <p>
+              <a
+                class="btn"
+                href="https://github.com/rayglass-org/rayglass.net/releases/latest/download/RayGlass-macos-arm64.zip"
+                >RayGlass-macos-arm64.zip</a
+              >
+              <a
+                class="btn ghost"
+                href="https://github.com/rayglass-org/rayglass.net/releases/latest/download/RayGlass-macos-arm64.dmg"
+                >.dmg</a
+              >
+            </p>
+            <p class="steps-label">macOS 15+ Gatekeeper bypass:</p>
+            <ol>
+              <li>Unzip (or open the .dmg and drag <code>RayGlass.app</code> to a folder).</li>
+              <li>
+                Open <strong>Terminal</strong> and run:
+                <pre><code>xattr -cr /path/to/RayGlass.app</code></pre>
+              </li>
+              <li>Double-click <code>RayGlass.app</code> to launch.</li>
+            </ol>
+          </article>
+
+          <article class="card">
+            <h3>Windows (x64)</h3>
+            <p>
+              <a
+                class="btn"
+                href="https://github.com/rayglass-org/rayglass.net/releases/latest/download/RayGlass-windows-x64-portable.zip"
+                >RayGlass-windows-x64-portable.zip</a
+              >
+            </p>
+            <p class="steps-label">Windows SmartScreen / Mark-of-the-Web bypass:</p>
+            <ol>
+              <li>
+                <strong>Right-click</strong> the downloaded <code>.zip</code> &gt;
+                <strong>Properties</strong>.
+              </li>
+              <li>
+                Check <strong>Unblock</strong> (bottom of the dialog) &gt; <strong>Apply</strong>.
+              </li>
+              <li>
+                <em>Then</em> extract the zip and run <code>RayGlass\rayglass-desktop.exe</code>.
+              </li>
+            </ol>
+            <p class="muted small">
+              Requires the Microsoft Edge WebView2 runtime (preinstalled on Windows 11 and current
+              Windows 10).
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Python / CLI</h3>
+            <p>Closed-source binary wheel — no build tools needed:</p>
+            <pre><code>pip install rayglass</code></pre>
+            <p class="muted small">
+              The CLI is unrestricted. It prints a one-line research/evaluation notice on first use.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>What you get</h2>
+        <ul class="features">
+          <li>2D, MPR, and 3D volume rendering from raw DICOM.</li>
+          <li>Drag-and-drop study import and a fast local database.</li>
+          <li>Scriptable <code>rayglass</code> CLI for export, MPR, and volume dumps.</li>
+          <li>Plugin system for segmentation, fusion, and measurements.</li>
+        </ul>
+        <!-- MEDIA SLOT: 30-60s walkthrough (add docs/website/assets/walkthrough.mp4 + poster). -->
+        <figure class="media">
+          <video
+            controls
+            muted
+            playsinline
+            preload="none"
+            poster="./assets/walkthrough-poster.png"
+          >
+            <source src="./assets/walkthrough.mp4" type="video/mp4" />
+          </video>
+        </figure>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        <a href="./license.html">License (EULA)</a>
+        &middot;
+        <a href="https://github.com/rayglass-org/rayglass.net/releases">All releases</a>
+        &middot;
+        <a href="mailto:info@rayglass.net">info@rayglass.net</a>
+      </p>
+      <p class="muted small">Copyright 2026 RayGlass. All rights reserved. NOT FDA approved.</p>
+    </footer>
+  </body>
+</html>
