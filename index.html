@@ -100,8 +100,20 @@
             <h3>Python / CLI</h3>
             <p>Closed-source binary wheel — no build tools needed:</p>
             <pre><code>pip install rayglass</code></pre>
+            <p class="steps-label">Open a study and render a PNG:</p>
+            <pre><code>import rayglass as rg
+
+s = rg.open("./dicom")
+s.render("axial.png")</code></pre>
+            <p class="steps-label">Wheel platforms (Python 3.10+):</p>
+            <ul>
+              <li>Linux x86_64 and aarch64 (ARM)</li>
+              <li>macOS Apple Silicon (arm64)</li>
+              <li>Windows x64 (Intel / AMD)</li>
+            </ul>
             <p class="muted small">
-              The CLI is unrestricted. It prints a one-line research/evaluation notice on first use.
+              Not built: macOS Intel, Windows ARM. The CLI is unrestricted and prints a one-line
+              research/evaluation notice on first use.
             </p>
           </article>
         </div>

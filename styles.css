@@ -158,21 +158,6 @@ main {
   font-size: 13px;
 }
 
-.card ol {
-  margin: 0;
-  padding-left: 18px;
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.card ol li {
-  margin-bottom: 6px;
-}
-
-.card code {
-  color: #d7dbe0;
-}
-
 .features {
   columns: 2;
   gap: 24px;
@@ -183,6 +168,23 @@ main {
 
 .features li {
   margin-bottom: 8px;
+}
+
+.card ol,
+.card ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.card ol li,
+.card ul li {
+  margin-bottom: 6px;
+}
+
+.card code {
+  color: #d7dbe0;
 }
 
 .media {
