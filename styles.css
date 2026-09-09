@@ -91,6 +91,21 @@ pre {
   background: transparent;
 }
 
+.btn.muted {
+  background: transparent;
+  border-color: #2f3338;
+  border-style: dashed;
+  color: var(--muted);
+  font-weight: 500;
+  opacity: 0.72;
+}
+
+.btn.muted:hover {
+  filter: none;
+  opacity: 0.9;
+  color: #b0b5bb;
+}
+
 .btn:hover {
   filter: brightness(1.1);
 }
@@ -98,6 +113,10 @@ pre {
 button.btn {
   cursor: pointer;
   font: inherit;
+}
+
+button.btn.muted {
+  cursor: not-allowed;
 }
 
 dialog.note-dialog {
