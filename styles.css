@@ -95,6 +95,36 @@ pre {
   filter: brightness(1.1);
 }
 
+button.btn {
+  cursor: pointer;
+  font: inherit;
+}
+
+.note-dialog {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+  color: var(--fg);
+  padding: 24px;
+  max-width: min(420px, calc(100vw - 32px));
+}
+
+.note-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.note-dialog p {
+  margin: 0 0 18px;
+  line-height: 1.45;
+}
+
+.note-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .banner {
   background: var(--warn-bg);
   border-top: 1px solid var(--warn-border);

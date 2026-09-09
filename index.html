@@ -18,15 +18,17 @@
       <p class="tagline">Fast DICOM viewer — native GUI and unrestricted CLI.</p>
       <div class="cta">
         <a class="btn primary" href="#download">Download</a>
-        <a class="btn" href="/app/?study=ct">Try in browser</a>
-        <a class="btn" href="mailto:info@rayglass.net?subject=RayGlass%20license%20/%20purchase"
-          >Buy / License</a
+        <a
+          class="btn"
+          id="try-browser-btn"
+          href="/app/?study=ct"
+          aria-haspopup="dialog"
+          >Try in browser</a
         >
+        <button type="button" class="btn" id="buy-license-btn" aria-haspopup="dialog">
+          Buy / License
+        </button>
       </div>
-      <!-- MEDIA SLOT: hero screenshot (add docs/website/assets/hero.png). -->
-      <figure class="media hero-media">
-        <img src="./assets/hero.png" alt="RayGlass viewer screenshot" loading="lazy" />
-      </figure>
     </header>
 
     <div class="banner" role="alert">
@@ -153,5 +155,59 @@ s.render("axial.png")</code></pre>
       </p>
       <p class="muted small">Copyright 2026 RayGlass. All rights reserved. NOT FDA approved.</p>
     </footer>
+
+    <dialog id="buy-license-dialog" class="note-dialog">
+      <p>
+        Not ready to sell licenses yet — we're still working on it. Evaluation builds remain free
+        for research and education.
+      </p>
+      <form method="dialog" class="note-dialog-actions">
+        <button type="submit" class="btn primary">Got it</button>
+      </form>
+    </dialog>
+
+    <dialog id="try-browser-dialog" class="note-dialog">
+      <p>
+        The browser demo is a quick taste of RayGlass — sample data only, limited UI. The desktop
+        app is the real product: richer tools, faster load, and full GPU performance on your
+        machine.
+      </p>
+      <form method="dialog" class="note-dialog-actions">
+        <a class="btn" href="#download" id="try-browser-download">Download desktop</a>
+        <button type="submit" class="btn primary" value="continue">Continue in browser</button>
+      </form>
+    </dialog>
+    <script>
+      (function () {
+        var buyBtn = document.getElementById("buy-license-btn");
+        var buyDlg = document.getElementById("buy-license-dialog");
+        if (buyBtn && buyDlg) {
+          buyBtn.addEventListener("click", function () {
+            buyDlg.showModal();
+          });
+        }
+
+        var tryBtn = document.getElementById("try-browser-btn");
+        var tryDlg = document.getElementById("try-browser-dialog");
+        var tryDownload = document.getElementById("try-browser-download");
+        if (!tryBtn || !tryDlg) return;
+        var tryHref = tryBtn.getAttribute("href");
+
+        tryBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          tryDlg.showModal();
+        });
+        if (tryDownload) {
+          tryDownload.addEventListener("click", function () {
+            tryDlg.close();
+          });
+        }
+        tryDlg.addEventListener("close", function () {
+          if (tryDlg.returnValue === "continue" && tryHref) {
+            window.location.href = tryHref;
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
