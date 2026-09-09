@@ -32,7 +32,7 @@ which the release workflow (`.github/workflows/release.yml`) populates with:
 | `RayGlass-macos-arm64.zip` | macOS (Apple Silicon), portable .app |
 | `RayGlass-macos-arm64.dmg` | macOS disk image |
 | `RayGlass-windows-x64-portable.zip` | Windows x64 portable |
-| `*.whl` | `pip install rayglass` |
+| `*.whl` | `pip install rayglass` — linux x64 + arm64, macOS arm64, Windows x64 (not macOS Intel / Win ARM) |
 
 ## Media backlog (add later)
 
@@ -40,7 +40,7 @@ Drop files into `assets/` — the `<img>`/`<video>` slots in `index.html` alread
 point at these paths, so no layout changes are needed:
 
 - [ ] `assets/hero.png` — main viewer screenshot (hero).
-- [ ] `assets/walkthrough.mp4` + `assets/walkthrough-poster.png` — 30-60s GUI demo.
+- [x] `assets/walkthrough.mp4` + `assets/walkthrough-poster.jpg` — GUI demo (from `rayglass.mov`, remuxed).
 - [ ] `assets/features/mpr.png` — MPR / 3-plane.
 - [ ] `assets/features/vr.png` — volume rendering.
 - [ ] `assets/features/import.png` — study import / database.
