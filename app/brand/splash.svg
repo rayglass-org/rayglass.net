@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-label="RayGlass">
+  <defs>
+    <clipPath id="light"><polygon points="0,0 1280,0 0,800"/></clipPath>
+    <clipPath id="dark"><polygon points="1280,0 1280,800 0,800"/></clipPath>
+    <clipPath id="ring">
+      <path d="M640 190 A210 210 0 1 1 639.9 190 Z M640 236 A164 164 0 1 0 640.1 236 Z" fill-rule="evenodd"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#light)"><rect width="1280" height="800" fill="#F4F1EC"/></g>
+  <g clip-path="url(#dark)"><rect width="1280" height="800" fill="#1A1C1E"/></g>
+  <g clip-path="url(#ring)">
+    <g clip-path="url(#light)"><rect width="1280" height="800" fill="#2EC4B6"/></g>
+    <g clip-path="url(#dark)"><rect width="1280" height="800" fill="#F7F7F5"/></g>
+  </g>
+  <g font-family="Arial Black, Helvetica Neue, Arial, sans-serif" font-weight="800" font-size="236" text-anchor="middle">
+    <g clip-path="url(#light)"><text x="640" y="488" fill="#1A1C1E">R</text></g>
+    <g clip-path="url(#dark)"><text x="640" y="488" fill="#F7F7F5">R</text></g>
+  </g>
+  <g fill="none" stroke="#2EC4B6" stroke-width="6" stroke-linecap="square">
+    <line x1="492" y1="400" x2="788" y2="400" stroke-dasharray="12 10"/>
+    <line x1="492" y1="388" x2="492" y2="412"/>
+    <line x1="788" y1="388" x2="788" y2="412"/>
+  </g>
+  <g>
+    <circle cx="596" cy="586" r="6" fill="#F7F7F5"/>
+    <circle cx="618" cy="586" r="6" fill="#9EE8E0"/>
+    <circle cx="640" cy="586" r="6" fill="#2EC4B6"/>
+    <circle cx="662" cy="586" r="6" fill="#1A8A82"/>
+    <circle cx="684" cy="586" r="6" fill="#1A1C1E"/>
+  </g>
+  <text x="640" y="680" text-anchor="middle" fill="#2EC4B6" font-family="Helvetica Neue, Arial, sans-serif" font-weight="600" font-size="28" letter-spacing="4">RAYGLASS</text>
+</svg>

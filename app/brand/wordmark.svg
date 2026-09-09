@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 160" role="img" aria-label="RayGlass">
+  <defs>
+    <clipPath id="disc"><circle cx="80" cy="80" r="70"/></clipPath>
+    <clipPath id="light"><polygon points="0,0 160,0 0,160"/></clipPath>
+    <clipPath id="dark"><polygon points="160,0 160,160 0,160"/></clipPath>
+    <clipPath id="ring">
+      <path d="M80 10 A70 70 0 1 1 79.9 10 Z M80 28 A52 52 0 1 0 80.1 28 Z" fill-rule="evenodd"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#disc)">
+    <g clip-path="url(#light)"><rect width="160" height="160" fill="#F4F1EC"/></g>
+    <g clip-path="url(#dark)"><rect width="160" height="160" fill="#1A1C1E"/></g>
+  </g>
+  <g clip-path="url(#ring)">
+    <g clip-path="url(#light)"><rect width="160" height="160" fill="#2EC4B6"/></g>
+    <g clip-path="url(#dark)"><rect width="160" height="160" fill="#F7F7F5"/></g>
+  </g>
+  <g font-family="Arial Black, Helvetica Neue, Arial, sans-serif" font-weight="800" font-size="72" text-anchor="middle">
+    <g clip-path="url(#light)"><text x="80" y="104" fill="#1A1C1E">R</text></g>
+    <g clip-path="url(#dark)"><text x="80" y="104" fill="#F7F7F5">R</text></g>
+  </g>
+  <text x="188" y="104" fill="#1A1C1E" font-family="Helvetica Neue, Arial, sans-serif" font-weight="600" font-size="64" letter-spacing="-1">RayGlass</text>
+</svg>

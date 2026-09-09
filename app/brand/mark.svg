@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="RayGlass">
+  <defs>
+    <clipPath id="disc"><circle cx="512" cy="512" r="380"/></clipPath>
+    <clipPath id="light"><polygon points="0,0 1024,0 0,1024"/></clipPath>
+    <clipPath id="dark"><polygon points="1024,0 1024,1024 0,1024"/></clipPath>
+    <clipPath id="ring">
+      <path d="M512 132 A380 380 0 1 1 511.9 132 Z M512 220 A292 292 0 1 0 512.1 220 Z" fill-rule="evenodd"/>
+    </clipPath>
+  </defs>
+  <!-- invert lives inside the disc only (transparent outside) -->
+  <g clip-path="url(#disc)">
+    <g clip-path="url(#light)"><rect width="1024" height="1024" fill="#F4F1EC"/></g>
+    <g clip-path="url(#dark)"><rect width="1024" height="1024" fill="#1A1C1E"/></g>
+  </g>
+  <g clip-path="url(#ring)">
+    <g clip-path="url(#light)"><rect width="1024" height="1024" fill="#2EC4B6"/></g>
+    <g clip-path="url(#dark)"><rect width="1024" height="1024" fill="#F7F7F5"/></g>
+  </g>
+  <g font-family="Arial Black, Helvetica Neue, Arial, sans-serif" font-weight="800" font-size="420" text-anchor="middle">
+    <g clip-path="url(#light)"><text x="512" y="668" fill="#1A1C1E">R</text></g>
+    <g clip-path="url(#dark)"><text x="512" y="668" fill="#F7F7F5">R</text></g>
+  </g>
+  <g fill="none" stroke="#2EC4B6" stroke-width="10" stroke-linecap="square">
+    <line x1="248" y1="512" x2="776" y2="512" stroke-dasharray="18 16"/>
+    <line x1="248" y1="492" x2="248" y2="532"/>
+    <line x1="776" y1="492" x2="776" y2="532"/>
+  </g>
+  <g>
+    <circle cx="432" cy="852" r="11" fill="#F7F7F5"/>
+    <circle cx="472" cy="852" r="11" fill="#9EE8E0"/>
+    <circle cx="512" cy="852" r="11" fill="#2EC4B6"/>
+    <circle cx="552" cy="852" r="11" fill="#1A8A82"/>
+    <circle cx="592" cy="852" r="11" fill="#1A1C1E"/>
+  </g>
+</svg>
