@@ -18,13 +18,7 @@
       <p class="tagline">Fast DICOM viewer — native GUI and unrestricted CLI.</p>
       <div class="cta">
         <a class="btn primary" href="#download">Download</a>
-        <a
-          class="btn"
-          id="try-browser-btn"
-          href="/app/?study=ct"
-          aria-haspopup="dialog"
-          >Try in browser</a
-        >
+        <a class="btn" id="try-browser-btn" href="https://demo.rayglass.net/">Try in browser</a>
         <button
           type="button"
           class="btn muted"
@@ -173,17 +167,6 @@ s.render("axial.png")</code></pre>
       </form>
     </dialog>
 
-    <dialog id="try-browser-dialog" class="note-dialog">
-      <h3>Browser demo</h3>
-      <p>
-        A quick taste of RayGlass — sample data only, limited UI. The desktop app is the real
-        product: richer tools, faster load, and full GPU performance on your machine.
-      </p>
-      <form method="dialog" class="note-dialog-actions">
-        <a class="btn" href="#download" id="try-browser-download">Download desktop</a>
-        <button type="submit" class="btn primary" value="continue">Continue in browser</button>
-      </form>
-    </dialog>
     <script>
       (function () {
         var buyBtn = document.getElementById("buy-license-btn");
@@ -193,27 +176,6 @@ s.render("axial.png")</code></pre>
             buyDlg.showModal();
           });
         }
-
-        var tryBtn = document.getElementById("try-browser-btn");
-        var tryDlg = document.getElementById("try-browser-dialog");
-        var tryDownload = document.getElementById("try-browser-download");
-        if (!tryBtn || !tryDlg) return;
-        var tryHref = tryBtn.getAttribute("href");
-
-        tryBtn.addEventListener("click", function (e) {
-          e.preventDefault();
-          tryDlg.showModal();
-        });
-        if (tryDownload) {
-          tryDownload.addEventListener("click", function () {
-            tryDlg.close();
-          });
-        }
-        tryDlg.addEventListener("close", function () {
-          if (tryDlg.returnValue === "continue" && tryHref) {
-            window.location.href = tryHref;
-          }
-        });
       })();
     </script>
   </body>
