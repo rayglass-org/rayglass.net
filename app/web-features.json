@@ -1,0 +1,8 @@
+{
+  "features": {
+    "streamed": false,
+    "local": true
+  },
+  "localEngine": true,
+  "sourceMaps": false
+}

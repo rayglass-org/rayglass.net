@@ -149,7 +149,7 @@ s.render("axial.png")</code></pre>
       <p>
         <a href="./license.html">License (EULA)</a>
         &middot;
-        <a href="https://github.com/rayglass-org/rayglass.net/releases">All releases</a>
+        <a href="#download">Downloads</a>
         &middot;
         <a href="mailto:info@rayglass.net">info@rayglass.net</a>
       </p>
@@ -168,11 +168,11 @@ s.render("axial.png")</code></pre>
     </dialog>
 
     <script>
-      (function () {
+      (() => {
         var buyBtn = document.getElementById("buy-license-btn");
         var buyDlg = document.getElementById("buy-license-dialog");
         if (buyBtn && buyDlg) {
-          buyBtn.addEventListener("click", function () {
+          buyBtn.addEventListener("click", () => {
             buyDlg.showModal();
           });
         }
