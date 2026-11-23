@@ -3,180 +3,305 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Pre-launch: keep the site out of search indexes. -->
     <meta name="robots" content="noindex, nofollow" />
-    <title>RayGlass — DICOM viewer (evaluation)</title>
+    <meta name="theme-color" content="#101415" />
     <meta
       name="description"
-      content="RayGlass — fast DICOM viewer with GUI and CLI. Research/evaluation use only; not for clinical diagnosis."
+      content="RayGlass is a DICOM viewer for desktop and browser, with local and streamed reading, live collaboration, interactive teaching and a Python API for imaging research."
     />
-    <link rel="stylesheet" href="./styles.css?v=3" />
+    <title>RayGlass — DICOM viewer for desktop and browser</title>
+    <link rel="icon" href="./assets/rayglass-mark.png" />
+    <link rel="stylesheet" href="./styles.css?v=7" />
   </head>
   <body>
-    <header class="hero">
-      <h1>RayGlass</h1>
-      <p class="tagline">Fast DICOM viewer — native GUI and unrestricted CLI.</p>
-      <div class="cta">
-        <a class="btn primary" href="#download">Download</a>
-        <a class="btn" id="try-browser-btn" href="https://demo.rayglass.net/">Try in browser</a>
-        <button
-          type="button"
-          class="btn muted"
-          id="buy-license-btn"
-          aria-haspopup="dialog"
-          title="Licensing not available yet"
-        >
-          Buy / License
-        </button>
-      </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="shell navigation" aria-label="Main navigation">
+        <a class="brand" href="./index.html">
+          <img src="./assets/rayglass-mark.png" width="38" height="38" alt="" />
+          RayGlass
+        </a>
+        <div class="nav-links">
+          <a href="#viewer">Viewer</a>
+          <a href="#streaming">Streaming</a>
+          <a href="#reading-rooms">Reading rooms</a>
+          <a href="#teaching">Teaching</a>
+          <a href="#research">Research</a>
+          <a href="#download">Downloads</a>
+        </div>
+        <a class="button button-small button-outline" href="https://demo.rayglass.net/">Get demo link</a>
+      </nav>
     </header>
 
-    <div class="banner" role="alert">
-      <strong>NOT FDA approved — not for clinical use.</strong> RayGlass is for research,
-      education, and evaluation only. Do not use for medical diagnosis, patient care, or
-      life-critical decisions.
-    </div>
+    <main id="main">
+      <section class="shell hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">DICOM viewer for desktop and browser</p>
+          <h1 id="hero-title">Fast DICOM.<br /><span>Local or streamed.</span></h1>
+          <p class="lede">
+            Our goal is to give clinicians a full-featured DICOM viewer that opens large studies
+            quickly and stays responsive throughout a read.
+          </p>
+          <div class="actions">
+            <a class="button button-primary" href="https://demo.rayglass.net/">Get a browser demo link <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="#download">Download RayGlass</a>
+          </div>
+          <p class="hero-note">Enter your email and we’ll send you a link when the demo server is ready.</p>
+          <p class="hero-note">For research, education and evaluation. Clinical use is prohibited under the <a href="./license.html">evaluation license</a>.</p>
+        </div>
+        <figure class="product-frame hero-frame">
+          <img
+            src="./assets/oblique-mpr.webp"
+            width="1280"
+            height="720"
+            fetchpriority="high"
+            alt="RayGlass browser viewer showing a rotated crosshair and three linked oblique CT planes"
+          />
+          <figcaption>
+            <span>Linked oblique MPR</span>
+            <a href="./assets/oblique-mpr-motion.gif">See the crosshair rotate <span aria-hidden="true">↗</span></a>
+          </figcaption>
+        </figure>
+      </section>
 
-    <main>
-      <section id="download" class="section">
-        <h2>Download</h2>
-        <p class="muted">
-          Builds are unsigned and portable — no administrator rights needed. Follow the unblock step
-          for your OS the first time.
-        </p>
+      <section id="viewer" class="shell section" aria-labelledby="viewer-title">
+        <div class="section-heading">
+          <p class="eyebrow">Reading tools</p>
+          <h2 id="viewer-title">A full-featured DICOM viewer for radiologists</h2>
+          <p>Review radiographs, CT and MRI in one workspace. Scroll through images and make measurements in 2D, inspect anatomy at an angle with linked MPR, and explore volumes in 3D.</p>
+        </div>
+        <div class="viewer-grid">
+          <figure class="product-frame volume-frame">
+            <img
+              src="./assets/volume-rendering.webp"
+              width="1280"
+              height="720"
+              loading="lazy"
+              decoding="async"
+              alt="RayGlass browser viewer showing a streamed 3D CT volume of the spine and pelvis"
+            />
+            <figcaption>
+              <span>Streamed 3D volume rendering</span>
+              <a href="./assets/walkthrough.mp4">Watch the desktop walkthrough <span aria-hidden="true">↗</span></a>
+            </figcaption>
+          </figure>
+          <div class="feature-list">
+            <article>
+              <h3>2D and cine</h3>
+              <p>Scroll stacks, play supported multiframe series, and measure directly on the image. View supported DICOM overlays and referenced presentation graphics.</p>
+            </article>
+            <article>
+              <h3>Linked oblique MPR</h3>
+              <p>Rotate the crosshair to reconstruct linked planes at an angle. Follow anatomy across planes and adjust slab thickness or projection.</p>
+            </article>
+            <article>
+              <h3>Interactive 3D</h3>
+              <p>Orbit and crop CT volumes, switch between volume rendering and maximum intensity projection, and return to the source planes.</p>
+            </article>
+            <article>
+              <h3>Capture and segmentation</h3>
+              <p>Capture views for review or teaching. On desktop, work with layers, fusion and DICOM SEG import and export.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-        <div class="cards">
+      <section id="streaming" class="streaming section" aria-labelledby="streaming-title">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow">Local and streamed</p>
+            <h2 id="streaming-title">Read where you work</h2>
+            <p>Open a study locally on your desktop or stream it in the desktop app or browser. The same RayGlass rendering engine, core controls and reading shortcuts let you switch without relearning the viewer.</p>
+          </div>
+          <div class="workflow-grid">
+            <article class="card">
+              <h3>Local desktop</h3>
+              <p>Import DICOM folders into a local study database, or query and retrieve from PACS over DIMSE or DICOMweb.</p>
+            </article>
+            <article class="card">
+              <h3>Streamed browser and desktop</h3>
+              <p>Scroll, window and rotate views interactively, with lossless viewport frames when the view settles. Source DICOM files stay on the server by default.</p>
+            </article>
+            <article class="card">
+              <h3>Resume your work</h3>
+              <p>Flag images and series. With server-side reader storage enabled, pick up saved reading positions and committed measurements when you return.</p>
+            </article>
+          </div>
+          <div class="benchmark">
+            <strong>Under 2 seconds</strong>
+            <div>
+              <h3>From MPR click to all three CT planes in the browser</h3>
+              <p>Median of three runs on one streamed benchmark study. Study size, server setup and network conditions affect performance.</p>
+            </div>
+            <a class="text-link" href="https://demo.rayglass.net/">Get a demo link for a sample study <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="reading-rooms" class="shell section split-section reading-rooms" aria-labelledby="rooms-title">
+        <div class="section-heading">
+          <p class="eyebrow">Collaborative reading rooms</p>
+          <h2 id="rooms-title">Review cases together in real time</h2>
+          <p>Open a live reading room from your workstation. Everyone follows the same 2D images, linked MPR or 3D view while the source DICOM files stay on the server.</p>
+          <div class="feature-list room-benefits">
+            <article>
+              <h3>Bring specialist expertise to the whole team</h3>
+              <p>Invite a specialist for a second opinion. Your team can follow along as they navigate the images and point out what they see.</p>
+            </article>
+            <article>
+              <h3>Walk referring clinicians through your findings</h3>
+              <p>Invite the referring veterinarian or another clinician with study access to see the images with you and connect the findings to your report.</p>
+            </article>
+          </div>
+          <a class="text-link" href="https://demo.rayglass.net/">Get a demo link to try a reading room <span aria-hidden="true">↗</span></a>
+        </div>
+        <figure class="product-frame section-illustration">
+          <img
+            src="./assets/collaborative-reading-room.webp"
+            width="1536"
+            height="1024"
+            loading="lazy"
+            decoding="async"
+            alt="Two radiologists at separate workstations review the same CT slice, with a line connecting their displays"
+          />
+        </figure>
+        <div class="room-workflow">
+          <ol class="feature-list">
+            <li>
+              <h3>Invite colleagues by link</h3>
+              <p>Readers with hosting permission start a room from the viewer’s Collaborate menu. Colleagues with study access can join by link. The link expires when the room closes.</p>
+            </li>
+            <li>
+              <h3>Pass or share control</h3>
+              <p>Give a colleague the controls or let several readers work in the shared view. Scroll, adjust the display, make measurements and mark findings with the familiar viewer tools.</p>
+            </li>
+            <li>
+              <h3>Pick up where you left off</h3>
+              <p>The host can take back control and restore their last shared view. Readers return to their own reading position when they leave.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="teaching" class="shell section split-section teaching" aria-labelledby="teaching-title">
+        <div class="section-heading">
+          <p class="eyebrow">RayGlass Teaching</p>
+          <h2 id="teaching-title">Teach and learn radiology with interactive cases</h2>
+          <p>A server add-on for live case walkthroughs and interactive recorded lessons built around the scan itself.</p>
+          <div class="actions">
+            <a class="text-link" href="https://demo.rayglass.net/webinar">Get an interactive lesson link <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="mailto:info@rayglass.net?subject=RayGlass%20Teaching">Ask about Teaching <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <figure class="product-frame section-illustration">
+          <img
+            src="./assets/virtual-radiology-class.webp"
+            width="1536"
+            height="1024"
+            loading="lazy"
+            decoding="async"
+            alt="A radiology instructor guides three remote learners who are viewing the same chest CT slice on their own screens"
+          />
+        </figure>
+        <div class="workflow-grid teaching-features">
           <article class="card">
-            <h3>macOS (Apple Silicon)</h3>
-            <p>
-              <a
-                class="btn"
-                href="https://github.com/rayglass-org/rayglass.net/releases/latest/download/RayGlass-macos-arm64.zip"
-                >RayGlass-macos-arm64.zip</a
-              >
-              <a
-                class="btn ghost"
-                href="https://github.com/rayglass-org/rayglass.net/releases/latest/download/RayGlass-macos-arm64.dmg"
-                >.dmg</a
-              >
-            </p>
-            <p class="steps-label">macOS 15+ Gatekeeper bypass:</p>
-            <ol>
-              <li>Unzip (or open the .dmg and drag <code>RayGlass.app</code> to a folder).</li>
-              <li>
-                Open <strong>Terminal</strong> and run:
-                <pre><code>xattr -cr /path/to/RayGlass.app</code></pre>
-              </li>
-              <li>Double-click <code>RayGlass.app</code> to launch.</li>
-            </ol>
+            <h3>Follow live</h3>
+            <p>Invite learners into a browser room to follow the instructor’s view. Grant a learner control or let them explore privately.</p>
           </article>
-
           <article class="card">
-            <h3>Windows (x64)</h3>
-            <p>
-              <a
-                class="btn"
-                href="https://github.com/rayglass-org/rayglass.net/releases/latest/download/RayGlass-windows-x64-portable.zip"
-                >RayGlass-windows-x64-portable.zip</a
-              >
-            </p>
-            <p class="steps-label">Windows SmartScreen / Mark-of-the-Web bypass:</p>
-            <ol>
-              <li>
-                <strong>Right-click</strong> the downloaded <code>.zip</code> &gt;
-                <strong>Properties</strong>.
-              </li>
-              <li>
-                Check <strong>Unblock</strong> (bottom of the dialog) &gt; <strong>Apply</strong>.
-              </li>
-              <li>
-                <em>Then</em> extract the zip and run <code>RayGlass\rayglass-desktop.exe</code>.
-              </li>
-            </ol>
-            <p class="muted small">
-              Requires the Microsoft Edge WebView2 runtime (preinstalled on Windows 11 and current
-              Windows 10).
-            </p>
+            <h3>Pause and explore</h3>
+            <p>Pause a recorded walkthrough and interact with the same case, then resume at the instructor’s view.</p>
           </article>
-
           <article class="card">
-            <h3>Python / CLI</h3>
-            <p>Closed-source binary wheel — no build tools needed:</p>
-            <pre><code>pip install rayglass</code></pre>
-            <p class="steps-label">Open a study and render a PNG:</p>
-            <pre><code>import rayglass as rg
-
-s = rg.open("./dicom")
-s.render("axial.png")</code></pre>
-            <p class="steps-label">Wheel platforms (Python 3.10+):</p>
-            <ul>
-              <li>Linux x86_64 and aarch64 (ARM)</li>
-              <li>macOS Apple Silicon (arm64)</li>
-              <li>Windows x64 (Intel / AMD)</li>
-            </ul>
-            <p class="muted small">
-              Not built: macOS Intel, Windows ARM. The CLI is unrestricted and prints a one-line
-              research/evaluation notice on first use.
-            </p>
+            <h3>Jump to a chapter</h3>
+            <p>Use chapter markers to seek the recording and restore the matching scan view.</p>
           </article>
         </div>
       </section>
 
-      <section class="section">
-        <h2>What you get</h2>
-        <ul class="features">
-          <li>2D, MPR, and 3D volume rendering from raw DICOM.</li>
-          <li>Drag-and-drop study import and a fast local database.</li>
-          <li>Scriptable <code>rayglass</code> CLI for export, MPR, and volume dumps.</li>
-          <li>Plugin system for segmentation, fusion, and measurements.</li>
-        </ul>
-        <figure class="media">
-          <video
-            controls
-            muted
-            playsinline
-            loop
-            preload="metadata"
-            poster="./assets/walkthrough-poster.jpg"
-          >
-            <source src="./assets/walkthrough.mp4" type="video/mp4" />
-          </video>
-        </figure>
+      <section id="research" class="research section" aria-labelledby="research-title">
+        <div class="shell split-section">
+          <div class="section-heading">
+            <p class="eyebrow">Research and academia</p>
+            <h2 id="research-title">Take DICOM into your notebook</h2>
+            <p>Use the RayGlass Python API in Jupyter notebooks and scripts for academic projects, quantitative imaging and reproducible analysis.</p>
+            <p>Load a DICOM series as a NumPy volume with its spatial affine, render images for review, or export NIfTI and NRRD volumes for downstream analysis.</p>
+            <a class="text-link" href="https://pypi.org/project/rayglass/">View the RayGlass Python package <span aria-hidden="true">↗</span></a>
+          </div>
+          <figure class="code-example">
+            <figcaption>From a CT series to a NumPy array and NIfTI file</figcaption>
+            <pre><code>python -m pip install rayglass</code></pre>
+            <pre><code><span class="code-keyword">import</span> rayglass <span class="code-keyword">as</span> rg
+
+study = rg.open(<span class="code-string">"./dicom"</span>)
+volume = study.volume()
+voxels = volume.hu
+affine = volume.affine
+study.export(<span class="code-string">"volume.nii"</span>)</code></pre>
+            <p>Use Python 3.10 or later and point <code>./dicom</code> to a local DICOM CT series.</p>
+          </figure>
+        </div>
+      </section>
+
+      <section id="download" class="shell section downloads" aria-labelledby="download-title">
+        <div class="section-heading">
+          <p class="eyebrow">Get RayGlass</p>
+          <h2 id="download-title">Choose your setup</h2>
+          <p>Start with the browser demo, install the desktop app, or use the Python package in a research workflow.</p>
+        </div>
+        <div class="workflow-grid">
+          <article class="card download-card">
+            <div>
+              <h3>macOS</h3>
+              <p>Apple silicon. Open the signed and notarized disk image and copy RayGlass to Applications.</p>
+            </div>
+            <div class="actions">
+              <a class="button button-outline" href="https://github.com/rayglass-org/rayglass.net/releases/latest/download/RayGlass-macos-arm64.dmg">Download DMG</a>
+              <a class="text-link" href="https://github.com/rayglass-org/rayglass.net/releases/latest/download/RayGlass-macos-arm64.zip">ZIP archive</a>
+            </div>
+          </article>
+          <article class="card download-card">
+            <div>
+              <h3>Windows</h3>
+              <p>Windows x64 with Microsoft Edge WebView2 and a hardware GPU with a current driver.</p>
+            </div>
+            <div>
+              <a class="button button-outline" href="https://github.com/rayglass-org/rayglass.net/releases/latest/download/RayGlass-windows-x64-portable.zip">Download portable ZIP</a>
+              <details>
+                <summary>Installation steps</summary>
+                <p>Open the ZIP’s Properties, select <strong>Unblock</strong> if offered, and apply the change. Extract the ZIP and run <code>rayglass-desktop.exe</code> from the RayGlass folder.</p>
+              </details>
+            </div>
+          </article>
+          <article class="card download-card">
+            <div>
+              <h3>Python and command line</h3>
+              <p>Script DICOM opening, image rendering and volume export. The Python package requires Python 3.10 or later.</p>
+            </div>
+            <div>
+              <pre><code>pip install rayglass</code></pre>
+              <a class="text-link" href="https://pypi.org/project/rayglass/">Python package and platform support <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+        <p class="release-link"><a class="text-link" href="https://github.com/rayglass-org/rayglass.net/releases/latest">View release notes and available builds <span aria-hidden="true">↗</span></a></p>
       </section>
     </main>
 
-    <footer class="footer">
-      <p>
-        <a href="./license.html">License (EULA)</a>
-        &middot;
-        <a href="#download">Downloads</a>
-        &middot;
-        <a href="mailto:info@rayglass.net">info@rayglass.net</a>
-      </p>
-      <p class="muted small">Copyright 2026 RayGlass. All rights reserved. NOT FDA approved.</p>
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <div>
+          <a class="brand" href="./index.html">
+            <img src="./assets/rayglass-mark.png" width="34" height="34" alt="" />
+            RayGlass
+          </a>
+          <p>© 2026 RayGlass. For research, education and evaluation only.</p>
+        </div>
+        <div class="footer-links">
+          <a href="./license.html">Evaluation license</a>
+          <a href="mailto:info@rayglass.net">Contact RayGlass</a>
+        </div>
+      </div>
     </footer>
-
-    <dialog id="buy-license-dialog" class="note-dialog">
-      <h3>Licensing</h3>
-      <p>
-        Not ready to sell licenses yet — we're still working on it. Evaluation builds remain free
-        for research and education.
-      </p>
-      <form method="dialog" class="note-dialog-actions">
-        <button type="submit" class="btn primary">Got it</button>
-      </form>
-    </dialog>
-
-    <script>
-      (() => {
-        var buyBtn = document.getElementById("buy-license-btn");
-        var buyDlg = document.getElementById("buy-license-dialog");
-        if (buyBtn && buyDlg) {
-          buyBtn.addEventListener("click", () => {
-            buyDlg.showModal();
-          });
-        }
-      })();
-    </script>
   </body>
 </html>
